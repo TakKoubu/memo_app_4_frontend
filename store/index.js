@@ -22,12 +22,14 @@ const createStore = () => {
         const index = state.loadedMemos.findIndex((v) => v.id === id)
         const memo = state.loadedMemos[index]
         memo.favorite_count = favoriteCount
+        memo.is_like = true
         state.loadedMemos.splice(index, 1, memo)
       },
       unFavo(state, { id, favoriteCount }){
         const index = state.loadedMemos.findIndex((v) => v.id === id)
         const memo = state.loadedMemos[index]
         memo.favorite_count = favoriteCount
+        memo.is_like = false
         state.loadedMemos.splice(index, 1, memo)
       }
     },
